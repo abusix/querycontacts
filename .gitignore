@@ -1,4 +1,11 @@
 .DS_Store
+*.pyc
+/dist
+/build
+/*.egg-info/
+*.sublime-*
+*.ini
+/.project
+/.pydevproject
 README.md
-
-
+.py[co]

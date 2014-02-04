@@ -16,7 +16,7 @@ setup(name='querycontacts',
       author_email='dc@abusix.com',
       url='http://abusix.com/global-reporting/abuse-contact-db',
       install_requires = ['dnspython', 'pyCLI'],
-      scripts=['querycontacts'],
+      scripts=['scripts/querycontacts'],
       license="GNU General Public License v3 (GPLv3)",
       classifiers=[
         'Development Status :: 4 - Beta',
