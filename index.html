@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Usage &mdash; querycontacts 0.2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="querycontacts 0.2.0 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">querycontacts 0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <span class="target" id="module-querycontacts"></span><div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><pre>usage: querycontacts [-h] [--provider PROVIDER] [--version] ip
+
+QueryContact - Find the Abuse contact for a IP address
+
+positional arguments:
+ip                   query network abuse contacts for a given ip address
+
+optional arguments:
+-h, --help           show this help message and exit
+--provider PROVIDER  change standard network abuse contacts provider.
+                    Defaults to abuse-contacts.abusix.org
+--version            show program's version number and exit</pre>
+</div>
+</div>
+<div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">querycontacts</span> <span class="kn">import</span> <span class="n">ContactFinder</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qf</span> <span class="o">=</span> <span class="n">ContactFinder</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;1.2.3.4&#39;</span><span class="p">)</span>
+<span class="go">[&#39;abuse@example.com&#39;, &#39;helpdesk@example.com&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python"><pre>pip install querycontacts</pre>
+</div>
+</div>
+<div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="querycontacts.ContactFinder">
+<em class="property">class </em><tt class="descclassname">querycontacts.</tt><tt class="descname">ContactFinder</tt><big>(</big><em>provider='abuse-contacts.abusix.org'</em><big>)</big><a class="headerlink" href="#querycontacts.ContactFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contact Finder</p>
+<dl class="method">
+<dt id="querycontacts.ContactFinder.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>provider='abuse-contacts.abusix.org'</em><big>)</big><a class="headerlink" href="#querycontacts.ContactFinder.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>provider</strong> (<em>string</em>) &#8211; Abuse contact lookup provider</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="querycontacts.ContactFinder.__weakref__">
+<tt class="descname">__weakref__</tt><em class="property"> None</em><a class="headerlink" href="#querycontacts.ContactFinder.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="querycontacts.ContactFinder.find">
+<tt class="descname">find</tt><big>(</big><em>ip</em><big>)</big><a class="headerlink" href="#querycontacts.ContactFinder.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the abuse contact for a IP address</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ip</strong> (<em>string</em>) &#8211; IPv4 or IPv6 address to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">emails associated with IP</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">none if no contact could be found</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><tt class="xref py py-class docutils literal"><span class="pre">ValueError</span></tt>: if ip is not properly formatted</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="querycontacts.ContactFinder.set_provider">
+<tt class="descname">set_provider</tt><big>(</big><em>provider</em><big>)</big><a class="headerlink" href="#querycontacts.ContactFinder.set_provider" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the provider for a specific path</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>provider</strong> (<em>string</em>) &#8211; Abuse contact lookup provider</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Usage</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#api">API</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">querycontacts 0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, abusix GmbH.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>
