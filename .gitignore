@@ -9,3 +9,4 @@
 /.pydevproject
 README.md
 .py[co]
+/docs/build

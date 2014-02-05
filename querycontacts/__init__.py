@@ -3,7 +3,7 @@ querycontacts: query network abuse contacts for a given ip address on
 abuse-contacts.abusix.org
 
 Copyright 2013 by abusix GmbH
-Author: Dean Ceulic
+Author: abusix GmbH
 License: GPLv3
 
 '''
@@ -64,7 +64,7 @@ class ContactFinder(object):
         data = []
         try:
             answers = self.resolver.query(name, 'TXT')
-        except resolver.NXDOMAIN:
+        except (resolver.NXDOMAIN, resolver.NoAnswer):
             return
 
         for answer in answers:

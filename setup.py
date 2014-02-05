@@ -19,7 +19,7 @@ setup(
     version=__version__,
     description=description,
     long_description=long_description,
-    author='Dean Ceulic',
+    author='abusix GmbH',
     author_email='info@abusix.com',
     url='http://abusix.com/global-reporting/abuse-contact-db',
     install_requires = requires,
