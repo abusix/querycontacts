@@ -38,3 +38,8 @@ Installation
 
     pip install querycontacts
 
+API
+---
+
+You can find the current API documentation `here <http://abusix.github.io/querycontacts/>`_
+

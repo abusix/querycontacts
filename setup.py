@@ -1,12 +1,13 @@
 import os
 from setuptools import setup, find_packages
-from querycontacts._version import __version__
 
 name = 'querycontacts'
 description = "Query network abuse contacts on the command-line for a given ip address on abuse-contacts.abusix.org"
 long_description = description
 cur_dir = os.path.abspath(os.path.dirname(__file__))
 
+# Read Version
+execfile('%s/querycontacts/_version.py' % (cur_dir))
 
 with open('%s/README.rst' % cur_dir, 'r') as f:
     long_description = f.read()
@@ -19,11 +20,13 @@ setup(
     version=__version__,
     description=description,
     long_description=long_description,
-    packages=find_packages()
     author='abusix GmbH',
     author_email='info@abusix.com',
     url='http://abusix.com/global-reporting/abuse-contact-db',
     install_requires=requires,
+    packages=find_packages(),
+    zip_safe=False,
+    include_package_data=True,
     scripts=['scripts/querycontacts'],
     license="GNU General Public License v3 (GPLv3)",
     classifiers=[
