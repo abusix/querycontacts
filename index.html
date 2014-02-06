@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Usage &mdash; querycontacts 0.2.0 documentation</title>
+    <title>Usage &mdash; querycontacts 0.2.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.2.0',
+        VERSION:     '0.2.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="querycontacts 0.2.0 documentation" href="#" /> 
+    <link rel="top" title="querycontacts 0.2.1 documentation" href="#" /> 
   </head>
   <body>
     <div class="related">
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">querycontacts 0.2.0 documentation</a> &raquo;</li> 
+        <li><a href="#">querycontacts 0.2.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -60,12 +60,15 @@ optional arguments:
 --version            show program's version number and exit</pre>
 </div>
 </div>
-<div class="section" id="examples">
-<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example">
+<h1>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">querycontacts</span> <span class="kn">import</span> <span class="n">ContactFinder</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">qf</span> <span class="o">=</span> <span class="n">ContactFinder</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">qf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;1.2.3.4&#39;</span><span class="p">)</span>
-<span class="go">[&#39;abuse@example.com&#39;, &#39;helpdesk@example.com&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;127.0.0.2&#39;</span><span class="p">)</span>
+<span class="go">[&#39;root@localhost&#39;, &#39;abuse@localhost&#39;]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">qf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;::ffff:7f00:2&#39;</span><span class="p">)</span>
+<span class="go">[&#39;root@localhost&#39;]</span>
 </pre></div>
 </div>
 </div>
@@ -159,7 +162,7 @@ optional arguments:
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Usage</a></li>
-<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#api">API</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -196,7 +199,7 @@ optional arguments:
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">querycontacts 0.2.0 documentation</a> &raquo;</li> 
+        <li><a href="#">querycontacts 0.2.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
