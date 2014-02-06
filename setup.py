@@ -19,10 +19,11 @@ setup(
     version=__version__,
     description=description,
     long_description=long_description,
+    packages=find_packages()
     author='abusix GmbH',
     author_email='info@abusix.com',
     url='http://abusix.com/global-reporting/abuse-contact-db',
-    install_requires = requires,
+    install_requires=requires,
     scripts=['scripts/querycontacts'],
     license="GNU General Public License v3 (GPLv3)",
     classifiers=[
