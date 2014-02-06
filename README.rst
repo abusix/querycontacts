@@ -17,13 +17,18 @@ Usage
     --version            show program's version number and exit
 
 
-Examples
---------
+Example
+-------
+
+::
 
     >>> from querycontacts import ContactFinder
     >>> qf = ContactFinder()
-    >>> qf.find('1.2.3.4')
-    ['abuse@example.com', 'helpdesk@example.com']
+    >>> qf.find('127.0.0.2')
+    ['root@localhost', 'abuse@localhost']
+
+    >>> qf.find('::ffff:7f00:2')
+    ['root@localhost']
 
 
 Installation
