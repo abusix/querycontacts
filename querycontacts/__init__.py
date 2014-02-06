@@ -14,10 +14,13 @@ from dns.name import from_text as dnsname
 import ipaddr
 from ._version import __version__
 
+
 class ContactFinder(object):
+
     '''
     Contact Finder
     '''
+
     def __init__(self, provider='abuse-contacts.abusix.org'):
         '''
         Init
@@ -55,7 +58,7 @@ class ContactFinder(object):
         rev = reversename(ip.exploded)
         revip, _ = rev.split(3)
         lookup = revip.concatenate(self.provider).to_text()
-        
+
         contacts = self._get_txt_record(lookup)
         if contacts:
             return contacts.split(',')
