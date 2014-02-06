@@ -1,3 +1,11 @@
+.. querycontacts documentation master file, created by
+   sphinx-quickstart on Wed Feb  5 12:59:37 2014.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+.. module:: querycontacts
+
+
 Usage
 -----
 
@@ -17,13 +25,18 @@ Usage
     --version            show program's version number and exit
 
 
-Examples
---------
+Example
+-------
+
+::
 
     >>> from querycontacts import ContactFinder
     >>> qf = ContactFinder()
-    >>> qf.find('1.2.3.4')
-    ['abuse@example.com', 'helpdesk@example.com']
+    >>> qf.find('127.0.0.2')
+    ['root@localhost', 'abuse@localhost']
+
+    >>> qf.find('::ffff:7f00:2')
+    ['root@localhost']
 
 
 Installation
@@ -32,4 +45,21 @@ Installation
 ::
 
     pip install querycontacts
+
+API
+---
+
+
+.. autoclass:: ContactFinder
+   :members:
+   :special-members:
+
+
+
+Indices and tables
+------------------
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 

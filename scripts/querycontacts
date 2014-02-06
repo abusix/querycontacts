@@ -1,0 +1,52 @@
+#!python
+
+'''
+querycontacts: query network abuse contacts for a given ip address on
+abuse-contacts.abusix.org
+
+Copyright 2014 by abusix GmbH
+Author: abusix GmbH
+License: GPLv3
+
+'''
+
+import argparse
+import sys
+from querycontacts import ContactFinder, __version__
+
+def main():
+    parser = argparse.ArgumentParser(
+        description='QueryContact - Find the Abuse contact for a IP address'
+    )
+    parser.add_argument(
+        'ip', 
+        help='query network abuse contacts for a given ip address'
+    )
+    parser.add_argument(
+        '--provider',
+        dest='provider',
+        default='abuse-contacts.abusix.org',
+        help='change standard network abuse contacts provider. Defaults to abuse-contacts.abusix.org'
+    )
+    parser.add_argument(
+        '--version',
+        action='version',
+        version='%(prog)s ' + __version__
+    )
+    options = parser.parse_args()
+
+    if options.ip:
+        cfinder = ContactFinder()
+        try:
+            emails = cfinder.find(options.ip)
+        except ValueError as error:
+            sys.exit(error)
+
+        if not emails:
+            sys.exit('querycontacts: error: no contacts for %s' % (options.ip))
+
+        for email in emails:
+            print email
+
+if __name__ == "__main__":
+    main()
