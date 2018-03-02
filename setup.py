@@ -3,11 +3,13 @@ from setuptools import setup, find_packages
 
 name = 'querycontacts'
 description = "Query network abuse contacts on the command-line for a given ip address on abuse-contacts.abusix.org"
-long_description = description
 cur_dir = os.path.abspath(os.path.dirname(__file__))
 
 # Read Version
-execfile('%s/querycontacts/_version.py' % (cur_dir))
+version_file = '%s/querycontacts/_version.py' % (cur_dir)
+with open(version_file) as f:
+    code = compile(f.read(), version_file, 'exec')
+    exec(code)
 
 with open('%s/README.rst' % cur_dir, 'r') as f:
     long_description = f.read()

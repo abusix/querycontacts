@@ -64,11 +64,11 @@ class ContactFinder(object):
             return contacts.split(',')
 
     def _get_txt_record(self, name):
-        data = []
         try:
             answers = self.resolver.query(name, 'TXT')
         except (resolver.NXDOMAIN, resolver.NoAnswer):
             return
 
         for answer in answers:
-            return ''.join(answer.strings)
+            return ''.join([answer_string.decode('utf-8')
+                            for answer_string in answer.strings])

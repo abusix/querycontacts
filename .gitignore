@@ -10,3 +10,7 @@
 README.md
 .py[co]
 /docs/build
+.coverage
+.pytest_cache/
+.settings/
+.tox/

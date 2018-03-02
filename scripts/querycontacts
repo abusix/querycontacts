@@ -1,4 +1,4 @@
-#!python
+#!/usr/bin/env python
 
 '''
 querycontacts: query network abuse contacts for a given ip address on
@@ -10,9 +10,13 @@ License: GPLv3
 
 '''
 
+from __future__ import print_function
+
 import argparse
 import sys
+
 from querycontacts import ContactFinder, __version__
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -35,18 +39,17 @@ def main():
     )
     options = parser.parse_args()
 
-    if options.ip:
-        cfinder = ContactFinder()
-        try:
-            emails = cfinder.find(options.ip)
-        except ValueError as error:
-            sys.exit(error)
+    cfinder = ContactFinder()
+    try:
+        emails = cfinder.find(options.ip)
+    except ValueError as error:
+        sys.exit(error)
 
-        if not emails:
-            sys.exit('querycontacts: error: no contacts for %s' % (options.ip))
+    if not emails:
+        sys.exit('querycontacts: error: no contacts for %s' % (options.ip))
 
-        for email in emails:
-            print email
+    for email in emails:
+        print(email)
 
 if __name__ == "__main__":
     main()
