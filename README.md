@@ -33,10 +33,28 @@ optional arguments:
 --version            show program's version number and exit
 ```
 
-### Example
+### Examples
+
+Show version:
 
 ```
-querycontacts 127.0.0.1
+$ querycontacts --version
+querycontacts 1.0.0
+```
+
+Show abuse contact for your IP:
+
+```
+$ IP=$(curl ipecho.net/plain)
+$ querycontacts $IP
+abuse@yourisp.example.com
+```
+
+Error when no abuse contact was found:
+
+```
+$ querycontacts 127.0.0.1
+querycontacts: error: no contacts for 127.0.0.1
 ```
 
 ## Library usage
