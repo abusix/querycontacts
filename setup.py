@@ -11,8 +11,12 @@ with open(version_file) as f:
     code = compile(f.read(), version_file, 'exec')
     exec(code)
 
-with open('%s/README.rst' % cur_dir, 'r') as f:
-    long_description = f.read()
+try:
+    import pypandoc
+    long_description = pypandoc.convert_file('README.md', 'rst')
+except:
+    with open(os.path.join(cur_dir, 'README.md')) as f:
+        long_description = f.read()
 
 with open('%s/requirements.txt' % cur_dir) as f:
     requires = f.readlines()
@@ -22,9 +26,11 @@ setup(
     version=__version__,
     description=description,
     long_description=long_description,
-    author='abusix GmbH',
-    author_email='info@abusix.com',
-    url='http://abusix.com/global-reporting/abuse-contact-db',
+    keywords = ['contact', 'query', 'dns', 'abuse contact', 'abuse', 'abusix', 'network'],
+    author='abusix',
+    author_email='fp@abusix.com',
+    python_requires='>=2.7',
+    url='https://github.com/abusix/querycontacts',
     install_requires=requires,
     packages=find_packages(),
     zip_safe=False,
@@ -32,14 +38,22 @@ setup(
     scripts=['scripts/querycontacts'],
     license="GNU General Public License v3 (GPLv3)",
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Environment :: Console',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Customer Service',
         'Intended Audience :: System Administrators',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Operating System :: MacOS :: MacOS X',
-        'Operating System :: POSIX',
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
         'Topic :: Security',
-    ]
+    ],
+    project_urls={
+        'Source': 'https://github.com/abusix/querycontacts',
+        'Company': 'https://www.abusix.com/'
+    },
 )

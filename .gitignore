@@ -7,7 +7,6 @@
 *.ini
 /.project
 /.pydevproject
-README.md
 .py[co]
 /docs/build
 .coverage
