@@ -26,7 +26,7 @@ ip                   query network abuse contacts for a given ip address
 optional arguments:
 -h, --help           show this help message and exit
 --provider PROVIDER  change standard network abuse contacts provider.
-                    Defaults to abuse-contacts.abusix.org
+                    Defaults to abuse-contacts.abusix.zone
 --version            show program's version number and exit
 ```
 

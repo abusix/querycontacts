@@ -1,6 +1,6 @@
 '''
 querycontacts: query network abuse contacts for a given ip address on
-abuse-contacts.abusix.org
+abuse-contacts.abusix.zone
 
 Copyright 2013 by abusix GmbH
 Author: abusix GmbH
@@ -21,7 +21,7 @@ class ContactFinder(object):
     Contact Finder
     '''
 
-    def __init__(self, provider='abuse-contacts.abusix.org'):
+    def __init__(self, provider='abuse-contacts.abusix.zone'):
         '''
         Init
 
@@ -46,7 +46,7 @@ class ContactFinder(object):
 
         :param ip: IPv4 or IPv6 address to check
         :type ip: string
-        
+
         :returns: emails associated with IP
         :rtype: list
         :returns: none if no contact could be found

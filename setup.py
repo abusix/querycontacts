@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 name = 'querycontacts'
-description = "Query network abuse contacts on the command-line for a given ip address on abuse-contacts.abusix.org"
+description = "Query network abuse contacts on the command-line for a given ip address on abuse-contacts.abusix.zone"
 cur_dir = os.path.abspath(os.path.dirname(__file__))
 
 # Read Version
