@@ -11,12 +11,8 @@ with open(version_file) as f:
     code = compile(f.read(), version_file, 'exec')
     exec(code)
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert_file('README.md', 'rst')
-except:
-    with open(os.path.join(cur_dir, 'README.md')) as f:
-        long_description = f.read()
+with open(os.path.join(cur_dir, 'README.md')) as f:
+    long_description = f.read()
 
 with open('%s/requirements.txt' % cur_dir) as f:
     requires = f.readlines()
@@ -26,6 +22,7 @@ setup(
     version=__version__,
     description=description,
     long_description=long_description,
+    long_description_content_type="text/markdown",
     keywords = ['contact', 'query', 'dns', 'abuse contact', 'abuse', 'abusix', 'network'],
     author='abusix',
     author_email='fp@abusix.com',
