@@ -36,7 +36,7 @@ Show version:
 
 ```
 $ querycontacts --version
-querycontacts 1.1.0
+querycontacts 1.1.1
 ```
 
 Show abuse contact for your IP:
