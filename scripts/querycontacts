@@ -2,7 +2,7 @@
 
 '''
 querycontacts: query network abuse contacts for a given ip address on
-abuse-contacts.abusix.org
+abuse-contacts.abusix.zone
 
 Copyright 2014 by abusix GmbH
 Author: abusix GmbH
@@ -23,14 +23,14 @@ def main():
         description='QueryContact - Find the Abuse contact for a IP address'
     )
     parser.add_argument(
-        'ip', 
+        'ip',
         help='query network abuse contacts for a given ip address'
     )
     parser.add_argument(
         '--provider',
         dest='provider',
-        default='abuse-contacts.abusix.org',
-        help='change standard network abuse contacts provider. Defaults to abuse-contacts.abusix.org'
+        default='abuse-contacts.abusix.zone',
+        help='change standard network abuse contacts provider. Defaults to abuse-contacts.abusix.zone'
     )
     parser.add_argument(
         '--version',
