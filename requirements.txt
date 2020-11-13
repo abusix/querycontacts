@@ -1,2 +1,2 @@
-dnspython
+dnspython>=2,<3
 ipaddr
