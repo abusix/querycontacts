@@ -1,10 +1,9 @@
-name: Python package
+name: test querycontacts
 
 on: [push]
 
 jobs:
-  build:
-
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
