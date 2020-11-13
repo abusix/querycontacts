@@ -65,7 +65,7 @@ class ContactFinder(object):
 
     def _get_txt_record(self, name):
         try:
-            answers = self.resolver.query(name, 'TXT')
+            answers = self.resolver.resolve(name, 'TXT')
         except (resolver.NXDOMAIN, resolver.NoAnswer):
             return
 
