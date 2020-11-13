@@ -11,7 +11,9 @@ License: GPLv3
 from dns import resolver
 from dns.reversename import from_address as reversename
 from dns.name import from_text as dnsname
-import ipaddr
+
+import ipaddress
+
 from ._version import __version__
 
 
@@ -54,7 +56,7 @@ class ContactFinder(object):
 
         :raises: :py:class:`ValueError`: if ip is not properly formatted
         '''
-        ip = ipaddr.IPAddress(ip)
+        ip = ipaddress.ip_address(ip)
         rev = reversename(ip.exploded)
         revip, _ = rev.split(3)
         lookup = revip.concatenate(self.provider).to_text()

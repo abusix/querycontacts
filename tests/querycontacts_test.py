@@ -21,7 +21,7 @@ class TestQueryContacts(unittest.TestCase):
         cfinder = ContactFinder()
         emails = cfinder.find('127.0.0.1')
 
-        self.assertIsNone(emails)
+        self.assertListEqual(emails, ['Abusix ContactDB Test point'])
 
 
 if __name__ == '__main__':

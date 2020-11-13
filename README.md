@@ -13,6 +13,8 @@
 pip install querycontacts
 ```
 
+Starting with version 2.0.0 support for python 2.7 is dropped. This is related to dnspython 2.0.0 also dropping support.
+
 ## Command line usage
 
 ```
@@ -55,6 +57,7 @@ querycontacts: error: no contacts for 127.0.0.1
 ```
 
 ## Library usage
+
 ```
 >>> from querycontacts import ContactFinder
 >>> qf = ContactFinder()
