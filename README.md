@@ -1,5 +1,4 @@
-[![Build Status](https://img.shields.io/travis/abusix/querycontacts/master.svg)](https://travis-ci.org/abusix/querycontacts)
-[![Test Coverage](https://img.shields.io/coveralls/github/abusix/querycontacts/master.svg)](https://coveralls.io/github/abusix/querycontacts)
+[![Build Status](https://img.shields.io/github/workflow/status/abusix/querycontacts/test.svg)](https://github.com/abusix/querycontacts/actions/)
 [![PyPi Version](https://img.shields.io/pypi/v/querycontacts.svg)](https://pypi.python.org/pypi/querycontacts)
 [![PyPi License](https://img.shields.io/pypi/l/querycontacts.svg)](https://pypi.python.org/pypi/querycontacts)
 [![PyPi Versions](https://img.shields.io/pypi/pyversions/querycontacts.svg)](https://pypi.python.org/pypi/querycontacts)
