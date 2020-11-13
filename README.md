@@ -37,7 +37,7 @@ Show version:
 
 ```
 $ querycontacts --version
-querycontacts 1.1.1
+querycontacts 2.0.0
 ```
 
 Show abuse contact for your IP:
@@ -48,11 +48,11 @@ $ querycontacts $IP
 abuse@yourisp.example.com
 ```
 
-Error when no abuse contact was found:
+Test response for localhost:
 
 ```
 $ querycontacts 127.0.0.1
-querycontacts: error: no contacts for 127.0.0.1
+Abusix ContactDB Test point
 ```
 
 ## Library usage
